@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vyacheslav Rusakov</title>
+    <script>
+        console.log("Hello! Nothing interesting here - it's just a static website, written in 1 day. " +
+            "By the way, don't forget to star projects you use - it's important!")
+    </script>
+</head>
+<body>
+<div class="grid-2">
+    <div class="section-1">
+        <div class="sticky-box">
+            <img src="img/logo.jpeg" class="logo">
+            <h2>Vyacheslav Rusakov</h2>
+            <p>Java developer</p>
+            <a href="https://github.com/xvik"><i class="fab fa-github"></i></a>
+            <a href="https://blog.vyarus.ru" title="Blog"><i class="fas fa-blog"></i></a>
+            <a href="https://patreon.com/guicey" title="Support"><i class="fas fa-donate"></i></a>
+        </div>
+    </div>
+    <div class="section-2">
+        <h2><span class="grey">//</span> Open Source Projects</h2>
+        <p>Most of my OSS development goes around one top-level project: other projects were created to fulfill main
+            project needs (including environment
+            needs). Nevertheless, I'm trying to do all projects in a generic way, so each one could be used
+            independently. If my projects make your life easier,
+            you can <a href="https://patreon.com/guicey">support its development</a>.</p>
+
+        <dl>
+            <dt><span><a href="https://github.com/xvik/dropwizard-guicey" class="primary">Dropwizard-guicey</a></span>
+            </dt>
+            <dd><a href="https://github.com/google/guice">Google guice</a> integration for <a
+                    href="http://dropwizard.io/">dropwizard</a> with additional integration modules. An attempt to get
+                dropwizard
+                closer to spring-boot (considering guice ideology differences).
+            </dd>
+        </dl>
+
+        <h3 id="java"><a href="#java">#</a> General Java</h3>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/generics-resolver" class="primary">Generics resolver</a></span>
+            </dt>
+            <dd>Java generics resolution at runtime. Initially was writtem for <a
+                    href="https://github.com/xvik/guice-persist-orient">
+                guice-persist-orient</a> to support its dao layer (similar to spring-data). Now it is used in guicey for
+                configuration class introspection (to support direct values injection).
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/yaml-updater" class="primary">Yaml config updater</a></span></dt>
+            <dd>CLI tool (with native binaries) for yaml files merging, preserving comments and white spaces. Contains
+                dropwizard
+                integration module (for dropwizard config updates)
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/spock-junit5" class="primary">Spock-junit5</a></span></dt>
+            <dd><a
+                    href="https://junit.org/junit5/">JUnit 5</a> extensions support for <a
+                    href="https://spockframework.org/">spockframework 2</a>. So any existing junit 5 extension could be
+                used in spock 2.
+                Avoids need to maintain different testing libraries for junit and spock.
+            </dd>
+        </dl>
+
+
+        <h3 id="guice"><a href="#guice">#</a> Guice</h3>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/guice-ext-annotations" class="primary">Guice ext annotations</a></span>
+            </dt>
+            <dd>Adds support for JSR-250 (@PostContruct and @PreDestroy) annotations. Provides class generator module to
+                allow
+                using abstract classes as guice beans (all calls must be handled with AOP). Initially was developed for
+                <a href="https://github.com/xvik/guice-persist-orient">guice-persist-orient</a> to power its spring-data
+                like repositories.
+                Now used in guicey <a href="https://github.com/xvik/dropwizard-guicey/tree/master/guicey-jdbi3">JDBI
+                    module</a> (for interface repositories)
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/guice-validator" class="primary">Guice validator</a></span></dt>
+            <dd>Runtime validation for guice bean method parameters and return value, annotated with
+                javax(jakarta).validation annotations
+                (e.g. <a href="https://hibernate.org/validator/">hibernate-validator</a>). With this module, it would be
+                enough
+                to put, for example, @NotNull annotation on method parameters to dynamically check values for nullness
+                during method call.
+            </dd>
+        </dl>
+
+
+        <h3 id="music"><a href="#music">#</a> Music</h3>
+        <dl>
+            <dt><span><a href="https://windofburi.space/" class="primary">Wind Of Buri</a> player</span></dt>
+            <dd>Ideal music for work (especially coding). I did this site to have a structured search
+                for this wonderful music and easily find related albums. Site was developed with <a
+                        href="https://angulardart.xyz/">angular-dart</a>
+                (with <a href="https://bulma.io/">bulma</a>) and being completely static (no backend).
+                Music played directly from <a href="https://promodj.com/windofburi">promodj site</a>, where "wind of
+                buri" publish its music<br><br>
+                <a href="https://windofburi.space/"><img src="img/windofburi_small.png"></a></dd>
+        </dl>
+
+
+        <h3 id="gradle"><a href="#gradle">#</a> Gradle plugins</h3>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-quality-plugin" class="primary">Quality</a> plugin</span>
+            </dt>
+            <dd>Static analysis tools (PMD, checkstyle, spotbugs, codenarc) gradle integration. The main goal of this
+                plugin
+                is to print all detected violations directly into console, which greatly improves static tools usage
+                comfort.
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-java-lib-plugin"
+                         class="primary">Java lib</a> plugin</span></dt>
+            <dd>Java (and groovy) projects configuration boilerplate. Makes gradle more "maven" (in sense of simplicity,
+                some
+                behaviours and for multi-module projects).
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-pom-plugin" class="primary">Pom</a> plugin</span></dt>
+            <dd>Plugin simplifies maven-publish plugin usage and corrects generated POM to behave more like "maven":
+                for example, more logically map gradle configurations into maven scopes. Fixes java-platform plugin
+                behaviour for BOMs. Allow to vanish used BOMs from generated POM (to simplify dependencies
+                resolution for projects, using this POM)
+            </dd>
+        </dl>
+        <dl>
+            <dt><a href="https://github.com/xvik/gradle-github-info-plugin" class="primary">Github info</a>
+                plugin</span></dt>
+            <dd>Removes github-related configuration boilerplate: most links in the generated POM could be easily
+                generated
+                with github user name (these links required for maven central publication).
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-mkdocs-plugin" class="primary">Mkdocs</a> plugin</span>
+            </dt>
+            <dd>Generates multi-version project documentation with python <a href="http://www.mkdocs.org/">mkdocs</a>
+                tool
+                (<a href="http://xvik.github.io/dropwizard-guicey/">see example</a>). Mkdocs is very easy to use with
+                gorgeous result.
+                Even <a href="https://asciidoctor.org/">asciidoctor</a>-based <a href="https://antora.org/">antora</a>
+                is not as great (antora use nodejs)
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-use-python-plugin"
+                         class="primary">Python</a> plugin</span></dt>
+            <dd>General python support for gradle project. Plugin requires only global python installation (or could use
+                docker
+                container with python) and, using it, could run python scrips or modules directly from gradle.
+                Project-specific pip
+                dependencies management is also implemented. Plugin was developed for mkdocs plugin (as separate plugin
+                so
+                later some other useful python modules could be converted to gradle plugin)
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-teavm-plugin" class="primary">TeaVM</a> plugin</span></dt>
+            <dd><a href="https://teavm.org/">TeaVM</a> integration: java (kotlin, scala) bytecode to javascript
+                transpiler (like GWT, but no sources needed and works
+                much faster). Plugin was developed while there was no official gradle plugin, but is still useful due to
+                better
+                development support.
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/gradle-prod-frontend-plugin" class="primary">Prod frontend</a> plugin</span>
+            </dt>
+            <dd>Optimize static website resources for projects not using nodejs. It would download all CDN links,
+                make sure css and js are minified, apply anti-cache hashes, etc. As an example, this simple site
+                <a href="https://github.com/xvik/vyarus.ru/">use it too</a></dd>
+        </dl>
+
+
+        <h3 id="generators"><a href="#generators">#</a> Project generators</h3>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/generator-lib-java"
+                         class="primary">Java project</a> generator</span>
+            <dt>
+            <dd>Generates new java (possibly, multi-module) project with configured maven central publication, quality
+                tools, etc.
+                Project assumed to be published on github. Using it for every new project. Could also update existing
+                project
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/generator-gradle-plugin"
+                         class="primary">Gradle plugin</a> generator</span></dt>
+            <dd>Same as java-lib but for gradle plugin (and also assumes github publication). Using it for every new
+                gradle plugin.
+            </dd>
+        </dl>
+
+
+        <h3 id="orientdb"><a href="#orientdb">#</a> OrientDB</h3>
+        <p>Probably retired modules. <a href="https://orientdb.org/">OrientDB</a> was <a
+                href="https://orientdb.org/enterprise-agent-open-source">bought by SAP</a>
+            (<a href="https://en.wikipedia.org/wiki/OrientDB#:~:text=On%20September%2015%2C%202017%2C%20OrientDB,supported%20by%20SAP%20(company).">indirectly</a>)
+            and put into <a href="https://github.com/orientechnologies/orientdb/issues/9734">maintenance mode</a>.
+            Original founder
+            (with part of dev team) "forked" it (<a href="https://docs.arcadedb.com/#OrientDB">massive rewrite</a>, many
+            parts
+            simply dropped like objects-mapping support and, more importantly,
+            dropped its binary protocol, moved to pure http) into <a href="https://arcadedb.com/">ArcadeDB</a>,
+            partially compatible with OrientDB (so modules below can't be used with ArcadeDB). Monitoring situation (one
+            retired, another too young)</p>
+        <dl>
+            <dt></span><a href="https://github.com/xvik/guice-ext-annotations" class="primary">Dropwizard OrientDB
+                embedded
+                server</a></span></dt>
+            <dd>Embeds <a href="https://orientdb.org/">OrientDB</a> (opensource graph/object/document database) server
+                into dropwizard application
+            </dd>
+        </dl>
+        <dl>
+            <dt><span><a href="https://github.com/xvik/guice-persist-orient"
+                         class="primary">Guice persist orient</a></span></dt>
+            <dd>Guice support for OrientDB (<a
+                    href="https://github.com/google/guice/wiki/GuicePersist">guice-persist</a> style).
+                Also provides <a
+                        href="https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#repositories.core-concepts">spring-data</a>
+                like <a href="https://xvik.github.io/guice-persist-orient/4.1.0/repository/overview/">repositories
+                    implementation</a></dd>
+        </dl>
+
+        <h3 id="blog"><a href="#blog">#</a> Blog</h3>
+        <p>Sometimes I'm writing into <a href="https://blog.vyarus.ru/">my blog</a>, but not very often. And, even less often, on
+            <a href="https://habr.com/ru/users/xvk/publications/articles/">habr</a></p>
+    </div>
+</div>
+
+<footer style="font-size: 0.7em; text-align: center">
+    <p>Made by <a href="https://github.com/xvik">@xvik</a>, original theme by <a
+            href="https://github.com/giotsere/minimalist-portfolio">@giotsere</a>
+    </p>
+</footer>
+</body>
+</html>

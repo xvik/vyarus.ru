@@ -1,0 +1,26 @@
+plugins {
+    id 'ru.vyarus.prod-frontend' version '1.0.1-SNAPSHOT'
+}
+
+ext {
+    webappDir = 'webapp'
+}
+
+tasks.register('copyWebapp', Copy) {
+    // manual clean cause build dir committed too (for deployment)
+    doFirst {
+        project.delete(webappDir)
+    }
+    // always run
+    outputs.upToDateWhen { true }
+
+    from('src')
+    into webappDir
+}
+
+prodFrontend {
+    sourceDir = webappDir
+    gzip = false
+}
+
+tasks.named('prodFrontend').configure {dependsOn('copyWebapp') }
