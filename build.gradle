@@ -21,6 +21,7 @@ tasks.register('copyWebapp', Copy) {
 prodFrontend {
     sourceDir = webappDir
     gzip = false
+    download.ignore 'www.googletagmanager.com'
 }
 
 tasks.named('prodFrontend').configure {dependsOn('copyWebapp') }
